@@ -16,6 +16,8 @@ interface SliderArrowArrow {
   className?: "string";
 }
 
+const SlickSlider: any = Slider;
+
 const SliderArrow: FC<SliderArrowArrow> = (props) => {
   const { onClick, type, className } = props;
   return (
@@ -76,7 +78,7 @@ const BitcoinSlider: FC = () => {
     prevArrow: <SliderArrow type="prev" />,
     nextArrow: <SliderArrow type="next" />,
     dots: true,
-    appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
+    // appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
     customPaging: () => (
       <Box
         sx={{
@@ -104,11 +106,11 @@ const BitcoinSlider: FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Slider {...sliderConfig}>
+            <SlickSlider {...sliderConfig}>
               {data.map((item, index) => (
                 <CourseCardItem key={String(item.id)} item={item} />
               ))}
-            </Slider>
+            </SlickSlider>
           </Grid>
         </Grid>
       </Container>

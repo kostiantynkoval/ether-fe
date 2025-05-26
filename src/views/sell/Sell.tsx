@@ -20,8 +20,8 @@ const Sell = () => {
     <Box>
       <Box
         sx={{
-          padding: "100px 80px 50px",
-          [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
+          padding: "20px",
+          [theme.breakpoints.up("md")]: { maxWidth: "1400px", padding: "100px 80px 50px", },
           width: "calc(100vw - 6px)",
           margin: "auto",
           textAlign: "left"
@@ -37,7 +37,9 @@ const Sell = () => {
               textTransform: "uppercase",
               color: "#ffffff",
               fontWeight: 700,
-              textAlign: "center"
+              textAlign: "left",
+                paddingLeft: "10px",
+                  [theme.breakpoints.up("md")]: { textAlign: "center", paddingLeft: "0" },
             }}
           >
             SELL
@@ -48,22 +50,45 @@ const Sell = () => {
               src="/images/sell.jpg"
               style={{ width: "100%", display: "block" }}
             />
+              <Box
+                  sx={{
+                      height: "42px",
+                      background: "#173039",
+                      fontSize: "16px",
+                      [theme.breakpoints.up("md")]: {
+                          fontSize: "22px", height: "48px"},
+                      textTransform: "uppercase",
+                      color: "#ffffff",
+                      fontWeight: 400,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center"
+                  }}
+              >
+                  <PlaceIcon sx={{ color: "#2dd8c8" }} />
+                  20550 Townsen Blvd Bldg 2 unit 101
+                  <span style={{ color: "#2dd8c8" }}>&nbsp; Humble Tx 77338</span>
+              </Box>
             <Box
               sx={{
                 background: "#00dbe3",
                 borderRadius: "6px",
-                width: "367px",
+                width: "207px",
                 textAlign: "center",
-                position: "absolute",
-                right: "-10%",
-                top: "50%",
+                  position: "absolute",
+                right: "-100px",
+                top: "-15px",
+                [theme.breakpoints.up("md")]: { width: "367px", position: "absolute", right: "-10%", top: "50%" },
                 transform: "translate(-50%, -50%)"
               }}
             >
               <Box
                 sx={{
-                  fontSize: "36px",
-                  lineHeight: "60px",
+                  fontSize: "20px",
+                  lineHeight: "30px",
+                  [theme.breakpoints.up("md")]: {
+                      fontSize: "36px",
+                      lineHeight: "60px", },
                   color: "#173039",
                   fontWeight: 700
                 }}
@@ -80,9 +105,18 @@ const Sell = () => {
                           padding: "0px 5px",
                           borderRight: "2px solid #00dbe3",
                           width: "110px",
-                          height: "110px"
+                          height: "60px",
+                            [theme.breakpoints.up("md")]: { height: "110px" },
+                            "& p": {
+                                fontSize: "18px",
+                                [theme.breakpoints.up("md")]: { fontSize: "24px", }
+                            },
+
                         },
-                        "& td:last-child": { borderRight: "0px" }
+                        "& td:last-child": {
+                            borderRight: "2px",
+                            [theme.breakpoints.up("md")]: { borderRight: "0px" },
+                        }
                       }}
                     >
                       <TableCell align="center">
@@ -102,9 +136,17 @@ const Sell = () => {
                           padding: "0px 5px",
                           borderRight: "2px solid #00dbe3",
                           width: "110px",
-                          height: "110px"
+                          height: "60px",
+                            [theme.breakpoints.up("md")]: { height: "110px" },
+                            "& p": {
+                                fontSize: "18px",
+                                [theme.breakpoints.up("md")]: { fontSize: "24px", }
+                            },
                         },
-                        "& td:last-child": { borderRight: "0px" }
+                          "& td:last-child": {
+                              borderRight: "2px",
+                              [theme.breakpoints.up("md")]: { borderRight: "0px" },
+                          }
                       }}
                     >
                       <TableCell align="center">
@@ -122,38 +164,31 @@ const Sell = () => {
               </Box>
             </Box>
           </Box>
-          <Box
-            sx={{
-              height: "52px",
-              background: "#173039",
-              fontSize: "30px",
-              textTransform: "uppercase",
-              color: "#ffffff",
-              fontWeight: 400,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <PlaceIcon sx={{ color: "#2dd8c8" }} />
-            20550 Townsen Blvd Bldg 2 unit 101
-            <span style={{ color: "#2dd8c8" }}>&nbsp; Humble Tx 77338</span>
-          </Box>
+
         </Box>
-        <Box sx={{ padding: "40px 150px" }}>
+        <Box sx={{ padding: "20px",
+            [theme.breakpoints.up("sm")]: {
+                padding: "40px 50px"
+            },[theme.breakpoints.up("md")]: {
+                padding: "40px 150px"
+            }, }}>
           <Box
             sx={{
               borderRadius: "6px",
               backgroundColor: "#173039",
               textAlign: "center",
-              width: "352px",
+
               padding: "10px"
             }}
           >
             <Typography
               sx={{
-                fontSize: "36px",
-                lineHeight: "60px",
+                fontSize: "24px",
+                lineHeight: "30px",
+                  [theme.breakpoints.up("sm")]: {
+                      fontSize: "36px",
+                      lineHeight: "60px"
+                  },
                 color: "#23a2bb",
                 fontWeight: 700
               }}
@@ -161,7 +196,11 @@ const Sell = () => {
               Offer Number
             </Typography>
             <Typography
-              sx={{ fontSize: "30px", color: "#fff", fontWeight: 400 }}
+              sx={{ fontSize: "20px",
+                  [theme.breakpoints.up("sm")]: {
+                      fontSize: "30px"
+                  },
+                  color: "#fff", fontWeight: 400 }}
             >
               1111
             </Typography>

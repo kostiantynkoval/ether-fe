@@ -51,8 +51,8 @@ const Dashboard = () => {
       <Box sx={{ background: "linear-gradient(to bottom, #173039, #00b4c9)" }}>
         <Box
           sx={{
-            padding: "50px 80px",
-            [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
+            padding: "20px",
+            [theme.breakpoints.up("sm")]: { maxWidth: "1400px", padding: "50px 80px" },
             width: "calc(100vw - 6px)",
             margin: "auto",
             textAlign: "left",
@@ -60,8 +60,12 @@ const Dashboard = () => {
         >
           <Typography
             sx={{
-              fontSize: "45px",
-              lineHeight: "60px",
+              fontSize: "25px",
+              lineHeight: "30px",
+              [theme.breakpoints.up("sm")]: {
+                  fontSize: "45px",
+                  lineHeight: "60px"
+              },
               color: "#fff",
               fontWeight: 700,
               marginBottom: "20px",
@@ -85,8 +89,12 @@ const Dashboard = () => {
             />
             <Typography
               sx={{
-                fontSize: "18px",
-                lineHeight: "60px",
+                fontSize: "16px",
+                lineHeight: "20px",
+                [theme.breakpoints.up("sm")]: {
+                  fontSize: "18px",
+                  lineHeight: "60px"
+                },
                 color: "#fff",
                 fontWeight: 400,
               }}
@@ -98,14 +106,13 @@ const Dashboard = () => {
       </Box>
       <Box
         sx={{
-          minHeight: "calc(100vh - 450px)",
+            display: "flex", flexDirection: "column",
           backgroundColor: "#fff",
           padding: "80px 24px",
-          display: "flex",
-          gap: "20px",
+          gap: "20px", overflowX: "hidden",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
           <Button
             variant="contained"
             sx={{
@@ -155,7 +162,7 @@ const Dashboard = () => {
             Exchange
           </Button>
         </Box>
-        <Box sx={{ overflow: "auto", width: { sm: "100%" } }}>
+        <Box sx={{ overflow: "auto", width: { sm: "100%" }, paddingBottom: "10px", }}>
           <Table
             aria-label="simple table"
             sx={{
@@ -163,6 +170,7 @@ const Dashboard = () => {
               whiteSpace: "nowrap",
               borderRadius: "8px",
               border: "2px solid #00dbe3",
+
             }}
           >
             <TableHead sx={{ background: "#f3f3f3" }}>

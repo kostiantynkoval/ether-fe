@@ -13,7 +13,7 @@ export const Logo = () => {
       src="/images/lock-logo.png"
       alt="logo"
       onClick={() => navigate("/")}
-      sx={{ cursor: "pointer" }}
+      sx={{ cursor: "pointer", maxWidth: "calc(100% - 90px)", height: 'auto'}}
     />
   );
 };

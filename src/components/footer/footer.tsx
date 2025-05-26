@@ -15,6 +15,7 @@ const Footer: FC = () => {
           sx={{
             textAlign: "left",
             display: "flex",
+            flexWrap: "wrap",
             justifyContent: "space-between",
             alignItems: "center"
           }}
@@ -32,7 +33,8 @@ const Footer: FC = () => {
               fontWeight: "bold",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              marginBottom: "20px"
             }}
           >
             HELP

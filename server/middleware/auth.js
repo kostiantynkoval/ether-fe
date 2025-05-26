@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken')
-const getPassport = require('../config/getPassport')
-const icloud_sod = require('icloud-sod');
+// const getPassport = require('../config/getPassport')
 
-const auth = (() => {
-  getPassport();
-})();
+// const auth = (() => {
+//   getPassport();
+// })();
 
 module.exports = function (req, res, next) {
   // Get token from header

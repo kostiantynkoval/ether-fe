@@ -1,8 +1,11 @@
 import React, { FC } from "react";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { navigations } from "./navigation.data";
-import { Link } from "@mui/material";
+import {Link} from "@mui/material";
 import { useLocation } from "react-router-dom";
+import Menu from '@mui/material/Menu';
+import ConnectCoinbase from "../connectCoinbase/ConnectCoinbase"
 
 type NavigationData = {
   path: string;
@@ -12,6 +15,15 @@ type NavigationData = {
 const Navigation: FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
   return (
     <Box
@@ -64,7 +76,12 @@ const Navigation: FC = () => {
           {label}
         </Box>
       )}
-      <Box
+      <Button
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
         sx={{
           position: "relative",
           color: "white",
@@ -82,11 +99,26 @@ const Navigation: FC = () => {
           width: "324px",
           height: "45px",
           borderRadius: "6px",
-          backgroundColor: "#00dbe3"
+          backgroundColor: "#00dbe3",
+          "&:hover": {
+              backgroundColor: "#309698",
+          }
+
         }}
       >
         Connect Wallet
-      </Box>
+      </Button>
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+                'aria-labelledby': 'basic-button',
+            }}
+        >
+            <ConnectCoinbase />
+        </Menu>
     </Box>
   );
 };
